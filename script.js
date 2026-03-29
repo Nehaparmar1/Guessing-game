@@ -2,6 +2,8 @@ const result = document.getElementById('result');
 const enterButton = document.getElementById('enterButton');
 const mysteryImage = document.getElementById('mysteryImage');
 const guessInput = document.getElementById('guessInput');
+const guessesLeft = document.getElementById('guessCount');
+const celebrityAnswer = document.getElementById('celebrityAnswer');
 let answer = "Taylor Swift"
 let guessCounter = 0 
 let blurAmount = 10
@@ -30,10 +32,11 @@ enterButton.onclick = function()
         mysteryImage.style.filter = "blur(" + blurAmount + "px)";
         guessCounter++
     }
-    
+    guessesLeft.textContent = "Guesses left: " + (3 - guessCounter);
     if (guessCounter === 3 && userInput.toLowerCase() !== answer.toLowerCase())
     {
         result.textContent = 'Out of guesses!';
+        celebrityAnswer.textContent = 'The answer is: ' + answer;
     }
 
     if (guessCounter === 3 || userInput.toLowerCase() === answer.toLowerCase())
@@ -44,7 +47,3 @@ enterButton.onclick = function()
 
     }
 }
-
-
-
-
