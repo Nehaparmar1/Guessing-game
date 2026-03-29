@@ -8,6 +8,7 @@ let answer = "Taylor Swift"
 let guessCounter = 0 
 let blurAmount = 10
 
+console.log("new loaded")
 guessInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         enterButton.click();
